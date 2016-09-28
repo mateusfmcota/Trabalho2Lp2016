@@ -21,12 +21,12 @@ public class UIGestao {
 		System.out.println("3 - Relatorios");
 		System.out.println("4 - Sair");
 		
-		int op = ent.nextInt();
-		do {
+		int op = Integer.parseInt(ent.nextLine());;
+		while (op<= 0 || op>4){
 			System.out.println("Opção invalida, digite novamente: ");
-			op = ent.nextInt();
+			op = Integer.parseInt(ent.nextLine());;
 			
-		} while (op<= 0 || op>4);
+		}
 		if(op == 1){
 			
 		}

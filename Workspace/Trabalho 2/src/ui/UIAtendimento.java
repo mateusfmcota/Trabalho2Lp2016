@@ -23,11 +23,12 @@ public class UIAtendimento {
 		System.out.println("1 - Adicionar um veiculo");
 		System.out.println("2 - Remover um veiculo");
 		System.out.println("3 - Listar Vagas");
+		System.out.println("4 - Sair");
 
-		int op = ent.nextInt();
+		int op = Integer.parseInt(ent.nextLine());
 		while (op <= 0 || op > 4) {
 			System.out.println("Opção invalida, digite novamente: ");
-			op = ent.nextInt();
+			op = Integer.parseInt(ent.nextLine());
 
 		}
 		if (op == 1) {
@@ -56,7 +57,7 @@ public class UIAtendimento {
 		System.out.println("O veiculo ja foi cadastrado? ");
 		System.out.println("1- Não");
 		System.out.println("2- Sim");
-		int x = ent.nextInt();
+		int x = Integer.parseInt(ent.nextLine());
 		Veiculo v = null;
 		if (x == 1) {
 			 v= cadastroVeic();
@@ -83,14 +84,14 @@ public class UIAtendimento {
 
 		if (x == -1) {
 			System.out.println("Qual Veiculo voce deseja: ");
-			int y = ent.nextInt();
+			int y = Integer.parseInt(ent.nextLine());
 			
 			while (y<0 || y>veic.size()) {
 				System.out.println("Valor invalido, digite novamente: ");
-				y = ent.nextInt();
+				y = Integer.parseInt(ent.nextLine());
 			}
 			
-			return veic.get(y-1);
+			return veic.get(y);
 		} else
 			return null;
 	}
@@ -99,7 +100,7 @@ public class UIAtendimento {
 		System.out.println("O veiculo é: ");
 		System.out.println("1- Automovel");
 		System.out.println("2- Moto");
-		int x = ent.nextInt();
+		int x = Integer.parseInt(ent.nextLine());
 		if (x == 1)
 			return cadastroAuto();
 		else if (x == 2)

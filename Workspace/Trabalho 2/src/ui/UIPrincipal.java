@@ -13,8 +13,8 @@ public class UIPrincipal {
 		
 		System.out.print("Digite o usuario: ");
 		String user = ent.nextLine();
-		
-		System.out.println("Digite a senha: ");
+		System.out.println("");
+		System.out.print("Digite a senha: ");
 		String senha = ent.nextLine();
 		
 		Funcionario f = s.login(user,senha);
