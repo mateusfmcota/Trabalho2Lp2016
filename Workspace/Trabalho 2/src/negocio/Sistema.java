@@ -28,4 +28,13 @@ public class Sistema {
 		
 	}
 
+	public ArrayList<Vaga> listVaga() {
+		return cvg.list();
+	}
+
+	public double delVaga(Vaga v) {
+		return cvg.del(v);
+		
+	}
+
 }

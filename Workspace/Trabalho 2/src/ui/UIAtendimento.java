@@ -34,7 +34,7 @@ public class UIAtendimento {
 		if (op == 1) {
 			addVeic();
 		} else	if (op == 2) {
-			delVeic();
+			delVaga();
 		} else	if (op == 3) {
 			listVagas(0);
 		} else	if (op == 4) {
@@ -45,12 +45,38 @@ public class UIAtendimento {
 
 	}
 
-	private void listVagas(int x) {
-				
+	private Vaga listVagas(int x) {
+		ArrayList<Vaga> vagas = new ArrayList<Vaga>();
+		vagas = s.listVaga();
+		System.out.println("\n----------------------------");
+		for (int i = 0; i < vagas.size(); i++) {
+			System.out.println(i + "   " + vagas.get(i).toString());
+		}
+		System.out.println("----------------------------\n");
+		
+		if (x == -1) {
+			System.out.println("Qual Vaga voce deseja: ");
+			int y = Integer.parseInt(ent.nextLine());
+			
+			while (y<0 || y>vagas.size()-1) {
+				System.out.println("Valor invalido, digite novamente: ");
+				y = Integer.parseInt(ent.nextLine());
+			}
+			
+			return vagas.get(y);
+		} else
+			return null;
 	}
 
-	private void delVeic() {
-		
+	private void delVaga() {
+		System.out.println("Escolha a vaga a ser removida: ");
+		Vaga v = listVagas(-1);
+		double valor = s.delVaga(v);
+		if(valor != 0){
+			System.out.println("Vaga removida com sucesso");
+		}else{
+			System.out.println("Falha ao remover a vaga");
+		}
 	}
 
 	private void addVeic() {
@@ -86,7 +112,7 @@ public class UIAtendimento {
 			System.out.println("Qual Veiculo voce deseja: ");
 			int y = Integer.parseInt(ent.nextLine());
 			
-			while (y<0 || y>veic.size()) {
+			while (y<0 || y>veic.size()-1) {
 				System.out.println("Valor invalido, digite novamente: ");
 				y = Integer.parseInt(ent.nextLine());
 			}
