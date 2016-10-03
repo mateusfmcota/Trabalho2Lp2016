@@ -22,4 +22,8 @@ public class RepoFuncionario {
 		return null;
 	}
 
+	public boolean add(Funcionario f) {
+		return func.add(f);
+	}
+
 }

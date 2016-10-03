@@ -10,4 +10,8 @@ public class ControladorFuncionario {
 		return rf.login(user,senha); 
 	}
 
+	public boolean add(Funcionario f) {
+		return rf.add(f);
+	}
+
 }

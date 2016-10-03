@@ -37,4 +37,22 @@ public class Sistema {
 		
 	}
 
+	public int getVaga(int i) {
+		return cvg.getVaga(i);
+	}
+
+	public boolean altVaga(int x, int vg) {
+		return cvg.altVagas(x,vg);
+		
+	}
+
+	public ArrayList<Vaga> listVagaOc() {
+		return cvg.listVagaOc();
+	}
+
+	public boolean addFunc(Funcionario f) {
+		return cf.add(f);
+		
+	}
+
 }
